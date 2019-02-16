@@ -20,6 +20,15 @@ class Student
     end
   end
 
+  def self.first_X_students_in_grade_10
+    sql = <<-SQL
+    SELECT *
+    FROM students
+    WHERE grade = 10
+    LIMIT 10
+    DB[:conn].execute(sql)
+  end
+
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT *
