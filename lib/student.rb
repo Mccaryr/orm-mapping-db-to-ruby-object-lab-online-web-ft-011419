@@ -25,7 +25,7 @@ class Student
     FROM students
     WHERE grade = 10
     LIMIT 1"
-    DB[:conn].execute(sql)
+    first_student = DB[:conn].execute(sql)[0]
   end
 
   def self.first_X_students_in_grade_10(x)
